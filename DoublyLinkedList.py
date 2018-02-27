@@ -66,6 +66,39 @@ class DoublyLinkedList(object):
 				return
 			cur_node = cur_node.next
 
+
+	def delete_front(self):
+		if self.head is None:
+			return
+
+		if self.head.next is None:
+			self.head = None
+			return
+
+		temp_node = self.head
+		self.head = self.head.next
+		self.head.prev = None
+		return temp_node
+
+
+	def delete_back(self):
+		if self.head is None:
+			return
+
+		if self.head.next is None:
+			self.head = None
+			return
+
+		cur_node = self.head
+		while cur_node.next:
+			cur_node = cur_node.next
+		temp_node = cur_node
+		cur_node.prev.next = None
+		temp_node.prev = None # optional
+		return temp_node
+
+
+
 	def print_all(self):
 		if self.head is None:
 			return
@@ -99,4 +132,10 @@ class DoublyLinkedList(object):
 # dll.insert_after_data("A1", "A2")
 # dll.print_all()
 
-
+# n1 = dll.delete_front()
+# dll.print_all()
+# n2 = dll.delete_back()
+# dll.print_all()
+# print(n1.data)
+# print(n2.data)
+# print(n2.data)
