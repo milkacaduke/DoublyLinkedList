@@ -85,33 +85,18 @@ class DoublyLinkedList(object):
 					print(cur_node.data +"("+ cur_node.prev.data +")"+ " -> ", end='')
 			cur_node = cur_node.next
 
-	def print_all_backwards(self):
-		if self.head is None:
-			return
-
-		cur_node = self.head
-		while cur_node.next:
-			cur_node = cur_node.next
-
-		while cur_node is not None:
-			if cur_node.prev is None:
-				print(cur_node.data)
-			else:
-				print(" <- " + cur_node.data, end="")
-			cur_node = cur_node.prev
-
 
 
 # main stuff
-dll = DoublyLinkedList()
-dll.insert("A")
-dll.insert("B")
-dll.insert("C")
+# dll = DoublyLinkedList()
+# dll.insert("A")
+# dll.insert("B")
+# dll.insert("C")
 
-dll.insert_after_data("B", "B1")
-dll.insert_after_data("A", "A1")
-dll.insert_after_data("C", "C1")
-dll.insert_after_data("A1", "A2")
-dll.print_all()
-# dll.print_all_backwards()
+# dll.insert_after_data("B", "B1")
+# dll.insert_after_data("A", "A1")
+# dll.insert_after_data("C", "C1")
+# dll.insert_after_data("A1", "A2")
+# dll.print_all()
+
 
